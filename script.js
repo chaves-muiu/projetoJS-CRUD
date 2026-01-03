@@ -69,32 +69,32 @@
         nomeProduto.parent().removeClass("has-error")
         
         if(qtdProduto < 0 || qtdProduto == ""){
-            qtdProduto.parent().addClass("has-error")
+            $("#qtdProduto").parent().addClass("has-error")
             return
         }
-        qtdProduto.parent().removeClass("has-error")
+        $("#qtdProduto").parent().removeClass("has-error")
 
         if(precoUni < 0 || precoUni == ""){
-            precoUni.parent().addClass("has-error")
+            $("#precoUni").parent().addClass("has-error")
             return
         }
-        precoUni.parent().removeClass("has-error")
+        $("#precoUni").parent().removeClass("has-error")
            
 
         var produto = {
             nome: nomeProduto.val(),
             qtd: qtdProduto,
             preco: precoUni,
-            totaljson: total.toFixed(2).replace(",",".")
+            totaljson: total.toFixed(2).replace(".",",")
         };
 
         dados.push(produto)
         var dadosSalvar = JSON.stringify(dados)
         localStorage.setItem("produtos", dadosSalvar)
 
-        nomeProduto.val("")
-        qtdProduto.val("")
-        precoUni.val("")
+        $("#nomeProduto").val("")
+        $("#qtdProduto").val("")
+        $("#precoUni").val("")
         
         listar();
         
