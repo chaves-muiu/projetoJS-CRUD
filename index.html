@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2 class="tituloPrincipal">Dashboard de Produtos</h2>
+
+    <div class="row">
+        <div class="col-md-3">
+            <label for="nomeProduto">Seu Prod</label>
+            <input class="form-control" type="text" id="nomeProduto" name="nomeProduto">
+        </div>
+        <div class="col-md-3">
+            <label for="qtdProduto">Quantidade</label>
+            <input class="form-control" type="number" id="qtdProduto" name="qtdProduto" >
+        </div>
+        <div class="col-md-3">
+            <label for="precoUni">Preço Unitário</label>
+            <input class="form-control" type="number" id="precoUni" name="precoUni" >
+        </div>
+        <div class="col-md-3">
+            <label for="valorTotal">Valor total</label>
+            <input class="form-control" type="number" id="valorTotal" name="valorTotal" readonly>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-5">
+            <label for="urgencia">Urgencia</label>
+            <select name="Urgencia" id="urgencia" class="form-control" onchange="verificaUrgencia()">
+                <option value="Baixa">Baixa</option>
+                <option value="Média">Média</option>
+                <option value="Alta">Alta</option>
+            </select>
+        </div>
+        <div class="col-md-5" id="divDataLimite" style="display: none;">
+            <label for="dataLimite">Data Limite</label>
+            <input class="form-control" type="date" id="dataLimite" name="dataLimite">
+
+        </div>
+    </div> 
+
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Produto</th>
+                <th>Qtd</th>
+                <th>Preço</th>
+                <th>Total</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody id="listaProdutos" name="listaProdutos">
+
+        </tbody>
+    </table>
+
+    <div class="row">
+        <button class="btn btn-primary" onclick="validar()">enviar</button>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

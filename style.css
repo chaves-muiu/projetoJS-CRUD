@@ -1,0 +1,80 @@
+@charset "utf-8";
+
+:root{
+    --fundoPG: #1e1e2f;
+    --fundoInput: #27293d;
+    --texto: #ffffff; 
+    --destaque: #1e90ff;
+}
+
+body{
+    background-color: var(--fundoPG);
+    color: var(--texto);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.tituloPrincipal{
+    text-align: center;
+    color: var(--destaque);
+    text-shadow: 0 0 10px var(--destaque);
+    margin-bottom: 20px;
+}
+
+.form-control {
+    background-color: var(--fundoInput);
+    color: var(--texto);
+    border: 1px solid #444;
+}
+
+.form-control[readonly]{
+    background-color: #383a54;
+    color: var(--texto);
+    border: 1px solid #444;
+}
+
+.form-control:focus{
+    border-color: var(--destaque);
+    box-shadow: 0 0 10px var(--destaque);
+}
+
+
+label{
+    color: #cfd2da;
+    font-weight: bold;
+}
+
+.btn-primary{
+    background-color: var(--destaque);
+    border: none;
+    width: 100%;
+    border-radius: 5px;
+}
+.btn-primary:hover{
+    background-color: rgb(185, 79, 185);
+}
+
+.table{
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+thead > tr > th{
+    color: var(--texto);
+    border-bottom:  2px solid var(--destaque);
+}
+
+tbody > tr >  td {
+    color: var(--texto);
+}
+
+
+
+tbody tr:hover{
+    background-color: var(--fundoInput) !important;
+}
+
+th, td{
+    padding: 15px !important;
+    text-align: center;
+}
