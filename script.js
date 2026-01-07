@@ -7,17 +7,18 @@
         throw "valores nos campos sao invalidos"
     }
 }*/
+
+function listar(){
     $("#listaProdutos").html("");
     if(localStorage.getItem("produtos") == null){
         
         return
     }
 
-        if( qtdProduto != "" && qtdProduto != null){
-            if(precoUni != "" && precoUni != null){
     dados = JSON.parse(localStorage.getItem("produtos"))
+    for(var i = 0; i < dados.length; i++ ){
+        var linha = "<tr onclick='editar("+ i + ")'>";
 
-    function listar(){
         linha += "<td>" + dados[i].nome + "</td>";
         linha += "<td>" + dados[i].qtd + "</td>";
         linha += "<td>" + dados[i].preco + "</td>";
